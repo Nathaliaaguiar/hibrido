@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "app-cg-01": {
+      "hosting": {
+        "app": [
+          "app-cg-01"
+        ]
+      }
+    }
+  }
+}

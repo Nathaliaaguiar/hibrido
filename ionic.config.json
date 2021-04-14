@@ -1,0 +1,7 @@
+{
+  "name": "Fuinhas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
