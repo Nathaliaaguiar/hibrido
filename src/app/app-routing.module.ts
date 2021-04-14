@@ -21,7 +21,7 @@ const routes: Routes = [
   // Rota para a página inicial
   {
     path: '',
-    redirectTo: 'articles',
+    redirectTo: 'register',
     pathMatch: 'full'
   },
 
@@ -70,6 +70,14 @@ const routes: Routes = [
     // Só pode ser vista se logado
     canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
   },
+  {
+    //Pagina de cadastro
+    path: 'register',
+    loadChildren: () => import('./user/register/register.module').then( m => m.RegisterPageModule),
+
+     // Só pode ser vista se logado
+    canActivate: [AngularFireAuthGuard], data: { authGuardPipe: toLogin }
+  },
 
   // Página de erro 404
   // '**' TEM QUE SER SEMPRE A ÚLTIMA ROTA
@@ -77,6 +85,7 @@ const routes: Routes = [
     path: '**',
     loadChildren: () => import('./pages/e404/e404.module').then(m => m.E404PageModule)
   }
+
 
 ];
 
