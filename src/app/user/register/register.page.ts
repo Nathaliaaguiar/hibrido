@@ -58,6 +58,7 @@ export class RegisterPage implements OnInit {
           if (userData) {
             this.registerForm.controls.name.setValue(userData.displayName.trim());
             this.registerForm.controls.email.setValue(userData.email.trim());
+            this.registerForm.controls.uid.setValue(userData.uid.trim());
           }
         }
       );
@@ -151,7 +152,10 @@ export class RegisterPage implements OnInit {
       ],
 
       // Campo PCD (pwd)
-      pwd: [false]
+      pwd: [false],
+
+      // Id do usuário logado (uid)
+      uid: ['']
 
     });
   }
@@ -165,7 +169,7 @@ export class RegisterPage implements OnInit {
     );
 
     // Salva em um novo documento do Firebase Firestore
-    this.firestore.collection('register').add(this.registerForm.value)
+    this.firestore.collection('register').doc(this.registerForm.value.uid).set(this.registerForm.value)
       .then(
         () => {
 
