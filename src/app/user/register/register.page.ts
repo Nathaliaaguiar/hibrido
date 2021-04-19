@@ -96,23 +96,21 @@ export class RegisterPage implements OnInit {
       ],
 
       // Campo 'Telefone' (telephone)
-      // Melhorar REGEX
       telephone: [
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern(/(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g),
+          Validators.pattern(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/),
           removeSpaces
         ]),
       ],
 
       // Campo 'Whatsapp' (whatsapp)
-      // Melhorar REGEX
       whatsapp: [
         '',
         Validators.compose([
           Validators.required,
-          Validators.pattern(/(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g),
+          Validators.pattern(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/),
           removeSpaces
         ]),
       ],
