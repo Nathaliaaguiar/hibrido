@@ -16,7 +16,7 @@ export class NewsPage implements OnInit {
   private apiKey = '9e3095af5b5b4cbe90a32b48f480f973';
 
   // Palavra chave das buscas
-  private apiQuery = 'memes';
+  private apiQuery = 'informática';
   
   // Quantas notícias serão exibidas
   private apiItens = 10;
