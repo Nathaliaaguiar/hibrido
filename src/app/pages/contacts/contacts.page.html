@@ -12,7 +12,7 @@
 <ion-content class="ion-no-padding ion-padding-horizontal">
 
  
-  <p>Use o formulário abaixo para entrar em contato com a equipe do "Técnico em informática".</p>
+  <p>Quer saber mais sobre o curso? Use o formulário abaixo para entrar em contato com a equipe do "Técnico em informática".</p>
   <p class="ion-text-center">
     <ion-text color="danger"><small>Todos os campos obrigatórios.</small></ion-text>
   </p>
@@ -41,6 +41,17 @@
           </ion-text>
         </ion-label>
         <ion-input type="text" id="email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label for="telephone" position="floating" color="primary">
+          Telefone:
+          <ion-text color="danger" *ngIf="contactForm.controls.telephone.errors">
+            <small *ngIf="contactForm.controls.telephone.errors.required">* Obrigatório</small>
+            <small *ngIf="contactForm.controls.telephone.errors.pattern">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="telephone" name="telephone" formControlName="telephone"></ion-input>
       </ion-item>
 
       <ion-item>

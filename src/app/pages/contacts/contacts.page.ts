@@ -75,6 +75,15 @@ export class ContactsPage implements OnInit {
         ]),
       ],
 
+      telephone: [
+        '',
+        Validators.compose([
+          Validators.required,
+          Validators.pattern(/^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$/),
+          removeSpaces
+        ]),
+      ],
+
       // Campo 'Assunto' (subject)
       subject: [
         '',
@@ -127,7 +136,7 @@ export class ContactsPage implements OnInit {
   async presentAlert() {
     const alert = await this.alert.create({
       header: 'Oba!',
-      message: 'Contato enviado com sucesso!',
+      message: 'Mensagem enviada com sucesso! Em breve entraremos em contato',
       buttons: [{
         text: 'Ok',
         handler: () => {
