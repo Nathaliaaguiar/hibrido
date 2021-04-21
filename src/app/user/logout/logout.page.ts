@@ -25,7 +25,7 @@ export class LogoutPage implements OnInit {
     this.auth.signOut()
     .then(
       () => {
-        this.router.navigate(['/register']);
+        this.router.navigate(['/user/login']);
       }
     )
     .catch(

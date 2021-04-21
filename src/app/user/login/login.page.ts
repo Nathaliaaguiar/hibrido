@@ -52,7 +52,7 @@ export class LoginPage implements OnInit {
       buttons: [{
         text: 'OK',
         handler: () => {
-          this.router.navigate(['/register']);
+          this.router.navigate(['/user/profile']);
         }
       }]
     });

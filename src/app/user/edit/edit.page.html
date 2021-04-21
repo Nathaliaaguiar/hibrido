@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+
+    <!-- Acesso ao menu -->
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <!-- Título da página -->
+    <ion-title>Editar Cadastro</ion-title>
+
+    <!-- Logotipo -->
+    <ion-img src="assets/logo01.png" slot="end" class="pages-logo"></ion-img>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding ion-padding-horizontal">
+
+  <p>Edite apenas os campos necessários. Você será responsável caso preencha
+    informações incorretas ou inverídicas.</p>
+  <p class="ion-text-center">
+    <ion-text color="danger"><small>Todos os campos são obrigatórios.</small></ion-text>
+  </p>
+
+  <form [formGroup]="registerForm" (ngSubmit)="registerSend()">
+
+    <ion-list lines="full" class="ion-no-padding">
+
+      <!-- Campo nome (name) -->
+      <ion-item>
+        <ion-label for="name" position="floating" color="primary">
+          Nome:
+          <ion-text color="danger" *ngIf="registerForm.controls.name.errors">
+            <small *ngIf="registerForm.controls.name.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.name.errors.minlength">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="name" name="name" formControlName="name"></ion-input>
+      </ion-item>
+
+      <!-- Campo e-mail (email) -->
+      <ion-item>
+        <ion-label for="email" position="floating" color="primary">
+          E-mail:
+          <ion-text color="danger" *ngIf="registerForm.controls.email.errors">
+            <small *ngIf="registerForm.controls.email.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.email.errors.email">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <!-- Campo Telefone' (telephone) -->
+      <ion-item>
+        <ion-label for="telephone" position="floating" color="primary">
+          Telefone:
+          <ion-text color="danger" *ngIf="registerForm.controls.telephone.errors">
+            <small *ngIf="registerForm.controls.telephone.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.telephone.errors.pattern">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="telephone" name="telephone" formControlName="telephone"></ion-input>
+      </ion-item>
+
+      <!-- Campo 'Whatsapp' (whatsapp) -->
+      <ion-item>
+        <ion-label for="whatsapp" position="floating" color="primary">
+          Whatsapp:
+          <ion-text color="danger" *ngIf="registerForm.controls.whatsapp.errors">
+            <small *ngIf="registerForm.controls.whatsapp.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.whatsapp.errors.pattern">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="whatsapp" name="whatsapp" formControlName="whatsapp"></ion-input>
+      </ion-item>
+
+      <!-- Campo data de nascimento (birth) -->
+      <ion-item>
+        <ion-label for="birth" position="floating" color="primary">
+          Nascimento:
+          <ion-text color="danger" *ngIf="registerForm.controls.birth.errors">
+            <small *ngIf="registerForm.controls.birth.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.birth.errors.pattern">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="birth" name="birth" formControlName="birth"></ion-input>
+      </ion-item>
+
+      <!-- Campo CPF (cpf) -->
+      <ion-item>
+        <ion-label for="cpf" position="floating" color="primary">
+          CPF:
+          <ion-text color="danger" *ngIf="registerForm.controls.cpf.errors">
+            <small *ngIf="registerForm.controls.cpf.errors.required">* Obrigatório</small>
+            <small *ngIf="registerForm.controls.cpf.errors.pattern">* Inválido</small>
+          </ion-text>
+        </ion-label>
+        <ion-input type="text" id="cpf" name="cpf" formControlName="cpf"></ion-input>
+      </ion-item>
+
+      <!-- Campo sexo (gender) -->
+      <ion-item>
+        <ion-label for="gender" color="primary">
+          Sexo:
+          <ion-text color="danger" *ngIf="registerForm.controls.gender.errors">
+            <small *ngIf="registerForm.controls.gender.errors.required">* Obrigatório</small>
+          </ion-text>
+        </ion-label>
+        <ion-grid>
+          <ion-row>
+            <ion-col><label><input type="radio" formControlName="gender" value="Masculino"> &nbsp;Masculino</label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><label><input type="radio" formControlName="gender" value="Feminino"> &nbsp;Feminino</label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <!-- Campo endereço (address) -->
+      <ion-item>
+        <ion-label for="address" position="floating" color="primary">
+          Endereço:
+          <ion-text color="danger" *ngIf="registerForm.controls.address.errors">
+            <small *ngIf="registerForm.controls.address.errors.required">* Obrigatório</small>
+          </ion-text>
+        </ion-label>
+        <ion-textarea type="text" id="address" name="address" formControlName="address" autoGrow="true"></ion-textarea>
+      </ion-item>
+
+      <!-- Campo PCD (pwd) -->
+      <ion-item>
+        <ion-label for="pwd" color="primary">
+          PCD:
+        </ion-label>
+        <ion-toggle id="pwd" name="pwd" formControlName="pwd" checked></ion-toggle>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button class="ion-margin-vertical" type="submit" expand="block" [disabled]="registerForm.invalid">Atualizar
+    </ion-button>
+
+  </form>
+
+</ion-content>

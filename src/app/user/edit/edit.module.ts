@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { RegisterPageRoutingModule } from './register-routing.module';
-import { RegisterPage } from './register.page';
+import { EditPageRoutingModule } from './edit-routing.module';
+import { EditPage } from './edit.page';
 
 // 1) Importa módulo de formulários reativos do Angular
 import { ReactiveFormsModule } from '@angular/forms';
@@ -13,11 +13,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     IonicModule,
-    RegisterPageRoutingModule,
+    EditPageRoutingModule,
 
     // 2) Importa módulo
     ReactiveFormsModule
   ],
-  declarations: [RegisterPage]
+  declarations: [EditPage]
 })
-export class RegisterPageModule { }
+export class EditPageModule { }
